@@ -33,7 +33,7 @@ int main(int argc,char *argv[])
 		printf("please pass input path");
 		exit(1);
 	}
-	// step 2: make sure that we are access to the file target
+	// step 2: make sure that we have access to the target file
 	if(access(argv[1],F_OK) != 0)
 	{
 		printf("input path doesn't exist");
@@ -41,7 +41,7 @@ int main(int argc,char *argv[])
 	}
 	if(access(argv[1],R_OK) != 0)
 	{
-		printf("the path passed has not read access");
+		printf("the file passed has no read access");
 		exit(1);
 	}
 	// open read stream to the file belong to path
