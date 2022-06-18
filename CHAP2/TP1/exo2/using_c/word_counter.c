@@ -57,44 +57,24 @@ int main(int argc,char *argv[])
 	printf("the length of word %s is %ld\n",word,length);
 	while ((digit = fgetc(input)) != EOF) {
 		// function used to read the contents of file
-		//printf("%c\n",digit);
+		printf("%c\n",digit);
 		// string recognition
-		if(step+1 == length-1)
+        	for(int i = 0; i<length;i++)
 		{
-			if(word[step+1] == digit)
-			{
-				counter++;
-				step = -1;
-			}
-			else if(word[0] == digit)
-			{
-				step = 0;
-			}
-			else
-			{
-				step = -1;
-			}
-		}
-		else{
-			if(word[step+1] == digit)
-			{
+			if(digit == word[i] && step == i-1)
 				step++;
-			}
-			else if(word[0] == digit)
-			{
-				step = 0;
-			}
-			else
-			{
-				step = -1;
-			}
+		}
+		if(step == length-1)
+		{
+			counter++;
+			step = -1;
 		}
 
     	}
 	// close read stream
     	fclose(input);
 	// print the end state of our recognize program
-	printf("the number of occurence of string ..%s.. is %d\n",word,counter);
+	printf("the number of occurence of string ..%s.. is %d",word,counter);
 	
 	return 0;
 }

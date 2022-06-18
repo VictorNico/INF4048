@@ -1,4 +1,4 @@
-// topic: program that is able to count the number of occurence of string mur
+// topic: program that is able to count the number of occurence of an user string using E-AFN
 
 // libraries importation
 #include <stdio.h>
@@ -7,7 +7,9 @@
 #include <unistd.h>
 
 // types, constance declarations
-
+#define init_q0 0
+#define inter_q1 1
+#define final_q2 2
 
 // functions prototypes
 
@@ -53,43 +55,71 @@ int main(int argc,char *argv[])
 	char digit;
 	char* word = argv[2];
 	size_t length = strlen(word);
+	int currentState = init_q0;
 	//printf("the length of %s is %ld and length of %c is %ld\n",word,strlen(word),word[0],sizeof(word[0]));
 	printf("the length of word %s is %ld\n",word,length);
 	while ((digit = fgetc(input)) != EOF) {
 		// function used to read the contents of file
 		//printf("%c\n",digit);
 		// string recognition
-		if(step+1 == length-1)
+		if(currentState == init_q0)
 		{
-			if(word[step+1] == digit)
+			if(digit == word[0])
 			{
-				counter++;
-				step = -1;
-			}
-			else if(word[0] == digit)
-			{
-				step = 0;
-			}
-			else
-			{
-				step = -1;
+				//printf("q0,%c->q1\n",digit);
+				step++;
+				currentState = inter_q1;
 			}
 		}
-		else{
-			if(word[step+1] == digit)
+		else if(currentState == inter_q1)
+		{
+			if(step+1 == length-1)
 			{
-				step++;
-			}
-			else if(word[0] == digit)
-			{
-				step = 0;
+				if(word[step+1] == digit)
+				{
+					currentState = final_q2;
+					//printf("q1,%c on step %d -> q2\n",digit,step);
+				}
+				else if(word[0] == digit)
+				{
+					printf("q1,%c->q1\n",digit);
+					//step = 0; // mark that we have already recognized the first caracter
+				}
+				else
+				{
+					//printf("q1,%c->q0\n",digit);
+					step = -1; // back onto first recognition
+				}
 			}
 			else
 			{
-				step = -1;
+				if(word[step+1] == digit)
+				{
+					//printf("q1,%c->q1 on step %d\n",digit,step+1);
+					step++; // mark that we have recognized a new caracter
+				}
+				else if(word[0] == digit)
+                                {
+					//printf("q1,%c->q1\n",digit);
+                                        step = 0; // mark that we have already recognized the first caracter
+				}
+                                else
+                                {
+					//printf("q1,%c->q0\n",digit);
+                                        step = -1; // back onto first recognition
+                                }
+
 			}
 		}
 
+		if(currentState == final_q2)
+		{
+			//printf("\ninside finale state\n");
+			currentState = init_q0;
+			counter++;
+			step = -1;
+		}
+		// printf("\nmust be on q2\n");
     	}
 	// close read stream
     	fclose(input);
