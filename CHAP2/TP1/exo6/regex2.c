@@ -7,9 +7,12 @@
 #include <unistd.h>
 
 // types, constance declarations
-#define init_q0 0
-#define q1 1
-#define q2 2
+#define init_final_q0 0
+#define final_q1 1
+#define final_q2 2
+#define final_q3 3
+#define q4 4
+
 // functions prototypes
 
 
@@ -47,65 +50,171 @@ int main(int argc,char *argv[])
 	input = fopen(argv[1],"r");
 	// fetch each char file content
 	char digit;
-	int currentState = init_q0;
+	int currentState = init_final_q0;
 	// automaton logic
-	// init states = {init_q0}
-	// finite states = {}
-	// states = {init_q0,q1,q2}
-	// alphabet = {a-z,A-z,.,0-9,+,*,-,/}
+	// init states = {init_final_q0}
+	// finite states = {init_final_q0,final_q1,final_q2,final_q3}
+	// states = {init_final_q0,final_q1,final_q2,final_q3, q4}
+	// alphabet = {a-c}
 	// transition function
-	// init_q0:{
-	// 	{a|b|c}->q1,
-	// 	*\{a|b|c| }->q2,
-	//	{ }->init_q0
+	// init_final_q0:{
+	// 	a->final_q1,
+	// 	b->final_q2,
+	// 	c->final_q3,
+	//	*\{a|b|c}->q4
 	// }
-	// q1:{
-	// 	*\{a|b|c| }->q2,
-	// 	{a|b|c}->q1,
-	//	{ {->init_q0
+	// final_q1:{
+	// 	b->final_q2,
+	// 	c->final_q3,
+	// 	a->final_q1,
+	// 	*\{a}->q4
 	// }
-	// q2:{
-	// 	{ }->init_q0,
-	//	*\{ }->q2
+	// final_q2:{
+	// 	b->final_q2,
+	// 	a->final_q1,
+	// 	c->final_q3
+	//	*\{b}->q4
+	// }
+	// final_q3:{
+	// 	a->final_q1,
+	// 	b->final_q2,
+	// 	c->final_q3,
+	// 	*\{c}->q4
+	// }
+	// q4:{
+	// 	a->final_q1,
+	// 	b->final_q2,
+	// 	c->final_q3,
+	// 	*\{a|b|c}->q4
+	// }
 	// 	
 	//
-	
+	char* words = calloc(100,sizeof(char));
+	int index = 0;	
 	while ((digit = fgetc(input)) != EOF) {
 		// function used to read the contents of file
 		//printf("%c\n",digit);
 		// string recognition
-		if(currentState == init_q0)
+		if(currentState == init_final_q0)
 		{
 			switch(digit)
 			{
 				case 'a':
-				case 'b':
-				case 'c':
-					currentState = q1;
+					currentState = final_q1;
+					words[index++] = digit;
 					break;
-				case ' ':
-					counter++;
-					currentState = init_q0;
+				case 'b':
+					currentState = final_q2;
+					words[index++] = digit;
+					break;
+				case 'c':
+					currentState = final_q3;
+					words[index++] = digit;
+					break;
 				default:
-					currentState = init_q0;
+					currentState = q4;
 					break;
 			}
 		}
-		else if(currentState == q1)
+		else if(currentState == final_q1)
 		{
 			switch(digit)
 			{
 				case 'a':
+					currentState = final_q1;
+					words[index++] = digit;
+					break;
 				case 'b':
+					currentState = final_q2;
+					words[index++] = digit;
+					break;
 				case 'c':
-					currentState = q1;
+					currentState = final_q3;
+					words[index++] = digit;
 					break;
 				default:
 					counter++;
-					currentState = init_q0;
+					printf("%s\n",words);
+					index = 0;
+					free(words);
+					words =  calloc(100,sizeof(char));
+					currentState = q4;
 					break;
 			}
 		}
+                else if(currentState == final_q2)
+                {
+                        switch(digit)
+                        {
+                              	case 'a':
+                                        currentState = final_q1;
+					words[index++] = digit;
+                                        break;
+                                case 'b':
+                                        currentState = final_q2;
+					words[index++] = digit;
+                                        break;
+                                case 'c':
+                                        currentState = final_q3;
+					words[index++] = digit;
+                                        break;
+                                default:
+                                        counter++;
+					printf("%s\n",words);
+                                        index = 0;
+                                        free(words);
+                                        words =  calloc(100,sizeof(char));
+                                        currentState = q4;
+                                        break;
+                        }
+                }
+                else if(currentState == final_q3)
+                {
+                        switch(digit)
+                        {
+                                case 'a':
+                                        currentState = final_q1;
+					words[index++] = digit;
+                                        break;
+                                case 'b':
+                                        currentState = final_q2;
+					words[index++] = digit;
+                                        break;
+                                case 'c':
+                                        currentState = final_q3;
+					words[index++] = digit;
+                                        break;
+                                default:
+                                        counter++;
+					printf("%s\n",words);
+                                        index = 0;
+                                        free(words);
+                                        words =  calloc(100,sizeof(char));
+                                        currentState = q4;
+                                        break;
+                        }
+                }
+                else if(currentState == q4)
+                {
+                        switch(digit)
+                        {
+                                case 'a':
+					currentState = final_q1;
+					words[index++] = digit;
+					break;
+                                case 'b':
+					currentState = final_q2;
+					words[index++] = digit;
+					break;
+                                case 'c':
+                                        currentState = final_q3;
+					words[index++] = digit;
+                                        break;
+                                default:
+                                        currentState = q4;
+                                        break;
+                        }
+                }
     	}
 	// close read stream
     	fclose(input);
