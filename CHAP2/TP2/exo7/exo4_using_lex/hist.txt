@@ -1,0 +1,528 @@
+    1  apt 
+    2  sudo apt install bison flex nasm /y
+    3  sudo apt install bison flex nasm -y
+    4  gcc -- version
+    5  gcc --version
+    6  bison --version
+    7  flex --version
+    8  nasm --version
+    9  ls
+   10  cd Documents/
+   11  mkdir INF4048
+   12  cd INF4048/
+   13  mkdir CHAP1
+   14  cd CHAP1/
+   15  mkdir TP1
+   16  cd TP1/
+   17  mkdir exo1
+   18  cd exo1/
+   19  vim README.md
+   20  sudo apt install vim -y
+   21  sudo apt update && sudo apt install vim -y
+   22  sudo apt install vim -y
+   23  vim README.md
+   24  ls
+   25  vim mur_counter.l
+   26  sudo apt install sublime-text
+   27  sudo apt install sublime3
+   28  sudo apt install sublime
+   29  sudo apt install sublime-test
+   30  ls
+   31  vim lire.txt
+   32  ls
+   33  flex mur_counter.l 
+   34  cc lex.yy.c 
+   35  vim mur_counter.l
+   36  flex mur_counter.l 
+   37  cc lex.yy.c 
+   38  vim mur_counter.l
+   39  cc lex.yy.c 
+   40  flex mur_counter.l 
+   41  cc lex.yy.c 
+   42  flex mur_counter.l 
+   43  vim mur_counter.l
+   44  flex mur_counter.l 
+   45  cc lex.yy.c 
+   46  vim mur_counter.l
+   47  flex mur_counter.l 
+   48  cc lex.yy.c 
+   49  ls
+   50  ./a.out lire.txt
+   51  ls
+   52  cat output.txt 
+   53  vim output.txt 
+   54  ls
+   55  rm output.txt 
+   56  ls
+   57  vim lire.txt 
+   58  ./a.out lire.txt
+   59  cat lire.txt 
+   60  vim mur_counter.l
+   61  flex mur_counter.l 
+   62  cc lex.yy.c -lfl
+   63  ./a.out lire.txt
+   64  cat lire
+   65  cat lire.txt
+   66  vim mur_counter.l
+   67  flex mur_counter.l 
+   68  cc lex.yy.c -lfl
+   69  ./a.out lire.txt
+   70  cat output.txt 
+   71  ls
+   72  flex mur_counter.l 
+   73  vim mur_counter.l
+   74  flex mur_counter.l 
+   75  cc lex.yy.c -lfl
+   76  ./a.out lire.txt
+   77  cat lire
+   78  cat lire.txt
+   79  vim mur_counter.l
+   80  flex mur_counter.l 
+   81  cc lex.yy.c -lfl
+   82  vim mur_counter.l
+   83  flex mur_counter.l 
+   84  cc lex.yy.c -lfl
+   85  ./a.out lire.txt
+   86  vim mur_counter.l
+   87  flex mur_counter.l 
+   88  cc lex.yy.c -lfl
+   89  ./a.out lire.txt
+   90  cat output.txt 
+   91  vim mur_counter.l
+   92  flex mur_counter.l 
+   93  cc lex.yy.c -lfl
+   94  ./a.out lire.txt
+   95  vim mur_counter.l
+   96  flex mur_counter.l 
+   97  cc lex.yy.c -lfl
+   98  ./a.out lire.txt
+   99  cat output.txt 
+  100  vim mur_counter.l
+  101  flex mur_counter.l 
+  102  cc lex.yy.c -lfl
+  103  vim mur_counter.l
+  104  flex mur_counter.l 
+  105  cc lex.yy.c -lfl
+  106  cat output.txt 
+  107  ./a.out lire.txt
+  108  cat output.txt 
+  109  ls
+  110  cd -
+  111  cd exo2
+  112  ls
+  113  vim word_counter.l 
+  114  cat lire.txt 
+  115  flex mur_counter.l 
+  116  flex word_counter.l 
+  117  cc lex.yy.c -lfl
+  118  vim word_counter.l 
+  119  flex word_counter.l 
+  120  cc lex.yy.c -lfl
+  121  ./a.out lire.txt
+  122  ./a.out lire.txt Les
+  123  cat output.txt 
+  124  vim word_counter.l 
+  125  flex word_counter.l 
+  126  cc lex.yy.c -lfl
+  127  ./a.out lire.txt Les
+  128  cat output.txt 
+  129  vim word_counter.l 
+  130  flex word_counter.l 
+  131  vim word_counter.l 
+  132  flex word_counter.l 
+  133  vim word_counter.l 
+  134  flex word_counter.l 
+  135  cc lex.yy.c -lfl
+  136  ./a.out lire.txt Les
+  137  cat output.txt 
+  138  cd Documents/INF4048/CHAP1/TP1/exo1/
+  139  ls
+  140  mkdir using_c
+  141  cd using_c/
+  142  ls
+  143  vim mur_counter.c
+  144  ls
+  145  cp ../using_lex/lire.txt lire.txt
+  146  ls
+  147  vim Makefile
+  148  make
+  149  sudo apt install make -y
+  150  ls
+  151  make
+  152  gcc -o mur_counter mur_counter.c 
+  153  vim mur_counter.c 
+  154  gcc -o mur_counter mur_counter.c 
+  155  ls
+  156  ./mur_counter lire.txt
+  157  gcc -o mur_counter mur_counter.c 
+  158  ./mur_counter lire.txt
+  159  gcc -o mur_counter mur_counter.c 
+  160  ./mur_counter lire.txt
+  161  gcc -o mur_counter mur_counter.c 
+  162  ./mur_counter lire.txt
+  163  gcc -o mur_counter mur_counter.c 
+  164  ./mur_counter lire.txt
+  165  gcc -o mur_counter mur_counter.c 
+  166  ./mur_counter lire.txt
+  167  gcc -o mur_counter mur_counter.c 
+  168  ./mur_counter lire.txt
+  169  gcc -o mur_counter mur_counter.c 
+  170  ./mur_counter lire.txt
+  171  gcc -o mur_counter mur_counter.c 
+  172  ./mur_counter lire.txt
+  173  gcc -o mur_counter mur_counter.c 
+  174  ./mur_counter lire.txt
+  175  gcc -o mur_counter mur_counter.c 
+  176  ./mur_counter lire.txt
+  177  gcc -o mur_counter mur_counter.c 
+  178  ./mur_counter lire.txt
+  179  vim mur_counter.c 
+  180  sudo apt install git -y
+  181  cd ..
+  182  ls
+  183  cd using_lex
+  184  cd using _lex
+  185  cd 'using _lex'
+  186  ./a.out lire.txt
+  187  cat output.txt 
+  188  cat lire
+  189  cat lire.txt
+  190  ls
+  191  vim word_counter.c 
+  192  gcc -o word_counter word_counter.c 
+  193  ./word_counter lire.txt Les
+  194  vim word_counter.c 
+  195  gcc -o word_counter word_counter.c 
+  196  ./word_counter lire.txt les
+  197  gcc -o word_counter word_counter.c 
+  198  ./word_counter lire.txt les
+  199  gcc -o word_counter word_counter.c 
+  200  ./word_counter lire.txt les
+  201  ./word_counter lire.txt Les
+  202  gcc -o word_counter word_counter.c 
+  203  ./word_counter lire.txt Les
+  204  gcc -o word_counter word_counter.c 
+  205  ./word_counter lire.txt Les
+  206  gcc -o word_counter word_counter.c 
+  207  ./word_counter lire.txt Les
+  208  gcc -o word_counter word_counter.c 
+  209  ./word_counter lire.txt Les
+  210  gcc -o word_counter word_counter.c 
+  211  ./word_counter lire.txt Les
+  212  gcc -o word_counter word_counter.c 
+  213  ./word_counter lire.txt Les
+  214  gcc -o word_counter word_counter.c 
+  215  ./word_counter lire.txt Les
+  216  gcc -o word_counter word_counter.c 
+  217  ./word_counter lire.txt Les
+  218  gcc -o word_counter word_counter.c 
+  219  ./word_counter lire.txt Les
+  220  gcc -o word_counter word_counter.c 
+  221  ./word_counter lire.txt Les
+  222  gcc -o word_counter word_counter.c 
+  223  ./word_counter lire.txt Les
+  224  git clone git@github.com:VictorNico/INF4048.git
+  225  git status
+  226  vim .gitignore 
+  227  git add . && git commit -m "first commit for the project" && git push
+  228  git config --global user.email "viclegranddab@gmail.com"
+  229  git config --global user.name "dtvni"
+  230  git add . && git commit -m "first commit for the project" && git push
+  231  ssh-keygen -t ed25519 -C "Viclegranddab@gmail.com"
+  232  eval "$(ssh-agent -s)"
+  233  ssh-add ~/.ssh/id_ed25519
+  234  cat ~/.ssh/id_ed25519.pub
+  235  npm install gdebi
+  236  sudo apt install gdebi nodejs -y
+  237  sudo apt install telegram -y
+  238  sudo apt install telegram-desktop -y
+  239  ls
+  240  cd Documents/github/INF4048/
+  241  ls
+  242  mkdir CHAP2
+  243  cd CHAP2/
+  244  mkdir exo3
+  245  cd exo3/
+  246  mkdir exo1_AFD
+  247  mkdir exo2_AFD
+  248  mkdir AFD
+  249  ls
+  250  vim mur_counter.c 
+  251  cat lire.txt
+  252  rm lire.txt
+  253  rm test.txt
+  254  rm text.txt
+  255  gedit lire.txt
+  256  cat lire.txt
+  257  vim mur_counter.c 
+  258  cd ../../../../../CHAP1/TP1/exo2/using_c/
+  259  ./word_counter lire.txt Ls
+  260  vim
+  261  vim word_counter.c 
+  262  gcc -o word_counter word_counter.c 
+  263  ./word_counter lire.txt Ls
+  264  ./word_counter lire.txt Les
+  265  vim word_counter.c 
+  266  gcc -o word_counter word_counter.c 
+  267  ./word_counter lire.txt Les
+  268  ./word_counter lire.txt Mur
+  269  vim word_counter.c 
+  270  gcc -o word_counter word_counter.c 
+  271  ./word_counter lire.txt Mur
+  272  gcc -o mur_counter mur_counter.c 
+  273  ls
+  274  gcc -o mur_counter mur_counter.c 
+  275  ./mur_counter lire.txt
+  276  cat lire
+  277  cat lire.txt
+  278  gcc -o mur_counter mur_counter.c 
+  279  ./mur_counter lire.txt
+  280  gcc -o mur_counter mur_counter.c 
+  281  ./mur_counter lire.txt
+  282  cat lire.txt
+  283  gcc -o mur_counter mur_counter.c 
+  284  ./mur_counter lire.txt
+  285  gcc -o mur_counter mur_counter.c 
+  286  ./mur_counter lire.txt
+  287  gcc -o mur_counter mur_counter.c 
+  288  ./mur_counter lire.txt
+  289  ./mur_counter test.txt
+  290  gcc -o mur_counter mur_counter.c 
+  291  ./mur_counter test.txt
+  292  echo "\n" >> test
+  293  echo "\n" >> test.txt
+  294  ./mur_counter test.txt
+  295  ./mur_counter lire.txt
+  296  gcc -o mur_counter mur_counter.c 
+  297  ./mur_counter lire.txt
+  298  gcc -o mur_counter mur_counter.c 
+  299  ./mur_counter lire.txt
+  300  gcc -o mur_counter mur_counter.c 
+  301  ./mur_counter lire.txt
+  302  cat lire.txt
+  303  gcc -o mur_counter mur_counter.c 
+  304  ./mur_counter lire.txt
+  305  gcc -o mur_counter mur_counter.c 
+  306  ./mur_counter lire.txt
+  307  gedit text.txt
+  308  ./mur_counter text.txt
+  309  gedit text.txt
+  310  cat lire.txt 
+  311  ./mur_counter lire.txt
+  312  cat text.txt
+  313  gcc -o mur_counter mur_counter.c 
+  314  ./mur_counter lire.txt
+  315  ./mur_counter text.txt
+  316  ./mur_counter lire.txt
+  317  gcc -o mur_counter mur_counter.c 
+  318  ./mur_counter lire.txt
+  319  gcc -o mur_counter mur_counter.c 
+  320  ./mur_counter lire.txt
+  321  gcc -o mur_counter mur_counter.c 
+  322  ./mur_counter lire.txt
+  323  gcc -o mur_counter mur_counter.c 
+  324  ./mur_counter lire.txt
+  325  gcc -o mur_counter mur_counter.c 
+  326  ./mur_counter lire.txt
+  327  cd Documents/github/INF4048/CHAP2/TP1/exo3/exo2_AFD/
+  328  ls
+  329  cd using_c/
+  330  vim word_counter.c 
+  331  gedit word_counter.c 
+  332  vim word_counter.c 
+  333  gedit word_counter.c 
+  334  vim word_counter.c 
+  335  gcc -o word_counter word_counter.c 
+  336  ./word_counter lire.txt Les
+  337  gcc -o word_counter word_counter.c 
+  338  ./word_counter lire.txt Les
+  339  cat lire.txt 
+  340  gcc -o word_counter word_counter.c 
+  341  ./word_counter lire.txt Les
+  342  gcc -o word_counter word_counter.c 
+  343  gcc -o word_counter word_counter.c 
+  344  ./word_counter lire.txt Les
+  345  gcc -o word_counter word_counter.c 
+  346  ./word_counter lire.txt Les
+  347  gcc -o word_counter word_counter.c 
+  348  ./word_counter lire.txt Les
+  349  gcc -o word_counter word_counter.c 
+  350  ./word_counter lire.txt Les
+  351  gcc -o word_counter word_counter.c 
+  352  ./word_counter lire.txt Les
+  353  gcc -o word_counter word_counter.c 
+  354  ./word_counter lire.txt Les
+  355  gcc -o word_counter word_counter.c 
+  356  ./word_counter lire.txt Les
+  357  gcc -o word_counter word_counter.c 
+  358  ./word_counter lire.txt Les
+  359  gcc -o word_counter word_counter.c 
+  360  ./word_counter lire.txt Les
+  361  gcc -o word_counter word_counter.c 
+  362  ./word_counter lire.txt Les
+  363  gcc -o word_counter word_counter.c 
+  364  ./word_counter lire.txt Les
+  365  gcc -o word_counter word_counter.c 
+  366  ./word_counter lire.txt Les
+  367  gcc -o word_counter word_counter.c 
+  368  ./word_counter lire.txt Les
+  369  gcc -o word_counter word_counter.c 
+  370  ./word_counter lire.txt Les
+  371  ./word_counter lire.txt mur
+  372  ./word_counter lire.txt Mur
+  373  ./word_counter lire.txt Les
+  374  gcc -o word_counter word_counter.c 
+  375  ./word_counter lire.txt Les
+  376  gcc -o word_counter word_counter.c 
+  377  ./word_counter lire.txt Les
+  378  git add . && git commit -m "go onot exo6" && git push
+  379  ls
+  380  vim first_lexical_analyser.c 
+  381  vim README.md 
+  382  git add . && git commit -m "end with exercise 6 and starting exercise 7" && git push
+  383  cd CHAP2/
+  384  ls
+  385  mkdir TP2
+  386  cd TP2/
+  387  mkdir exo7
+  388  cd exo7/
+  389  ls
+  390  ls using_lex/
+  391  cat using_lex/mur_counter.l 
+  392  cp using_lex/ exo4_using_lex -R
+  393  cd exo4_using_lex/
+  394  ls
+  395  ren mur_counter.l exo4_parser.l
+  396  rename mur_counter.l exo4_parser.l
+  397  mv mur_counter.l exo4_parser.l
+  398  ls
+  399  vim exo4_parser.l 
+  400  flex exo4_parser.l 
+  401  cd ../../../../
+  402  git add . && git commit -m "less changes onto exo7" && git push
+  403  vim regex2.c 
+  404  gcc -o regex2 regex2.c 
+  405  regex2 /etc/bash.bashrc 
+  406  ./regex2 /etc/bash.bashrc 
+  407  grep -o -E "[abc]*" /etc/bash.bashrc 
+  408  grep -o -E "[abc]*" /etc/bash.bashrc > output.txt
+  409  gedit output.txt 
+  410  gcc -o regex2 regex2.c 
+  411  ./regex2 /etc/bash.bashrc 
+  412  gedit output.txt 
+  413  gcc -o regex2 regex2.c 
+  414  ./regex2 /etc/bash.bashrc  > output1.txt
+  415  gedit output1.txt 
+  416  vim first_lexical_analyser.c 
+  417  gedit first_lexical_analyser.c 
+  418  gcc -o parser first_lexical_analyser.c
+  419  gedit expression.txt 
+  420  ./parser expression.txt 
+  421  gedit first_lexical_analyser.c 
+  422  gcc -o parser first_lexical_analyser.c
+  423  ./parser expression.txt 
+  424  gedit first_lexical_analyser.c 
+  425  gcc -o parser first_lexical_analyser.c
+  426  ./parser expression.txt 
+  427  gedit first_lexical_analyser.c 
+  428  gcc -o parser first_lexical_analyser.c
+  429  ./parser expression.txt 
+  430  gcc -o parser first_lexical_analyser.c
+  431  gedit first_lexical_analyser.c 
+  432  gcc -o parser first_lexical_analyser.c
+  433  ./parser expression.txt 
+  434  gedit first_lexical_analyser.c 
+  435  gcc -o parser first_lexical_analyser.c
+  436  ./parser expression.txt 
+  437  gedit first_lexical_analyser.c 
+  438  gcc -o parser first_lexical_analyser.c
+  439  ./parser expression.txt 
+  440  gedit expression.txt 
+  441  ./parser expression.txt 
+  442  gedit first_lexical_analyser.c 
+  443  gcc -o parser first_lexical_analyser.c
+  444  ./parser expression.txt 
+  445  vim README.md
+  446  cd ..
+  447  mkdir exo5
+  448  cd exo5
+  449  grep -c -E 'if[0-9.]*n' /etc/bash.bashrc 
+  450  gedit /etc/bash.bashrc 
+  451  grep -c -E 'if[0-9]*.*n' /etc/bash.bashrc 
+  452  gedit /etc/bash.bashrc 
+  453  grep -c -E '^ if[0-9]*.*n' /etc/bash.bashrc 
+  454  grep -c -E 'if[0-9]*.*n' /etc/bash.bashrc 
+  455  grep -c -E '^if[0-9]*.*n' /etc/bash.bashrc 
+  456  grep -c -E '(^if[0-9]*.*n)|(^ *if[0-9]*.*n)' /etc/bash.bashrc 
+  457  gedit /etc/bash.bashrc 
+  458  echo "grep -c -E '(^if[0-9]*.*n)|(^ *if[0-9]*.*n)' /etc/bash.bashrc" > findConditionnalStatementInsideBashFileSystem.sh
+  459  ls
+  460  ./findConditionnalStatementInsideBashFileSystem.sh
+  461  chmod rxw findConditionnalStatementInsideBashFileSystem.sh
+  462  chmod --help
+  463  chmod +rxw findConditionnalStatementInsideBashFileSystem.sh
+  464  ./findConditionnalStatementInsideBashFileSystem.sh
+  465  echo "# Linux regex computation\n solution: grep -c -E '(^if[0-9]*.*n)|(^ *if[0-9]*.*n)' /etc/bash.bashrc\n To test my solution try these steps:\n\t* chmod +rxw findConditionnalStatementInsideBashFileSystem.sh\n\t./findConditionnalStatementInsideBashFileSystem.sh" > README.md
+  466  gedit README.md 
+  467  cd ..
+  468  mkdir exo6
+  469  cd exo6
+  470  ls
+  471  cd ../exo5
+  472  grep -c -E '^if.*n' /etc/bash.bashrc 
+  473  grep -c -E '^if.*n$' /etc/bash.bashrc 
+  474  echo "grep -c -E '^if.*n$' /etc/bash.bashrc" > findConditionnalStatementInsideBashFileSystem.sh 
+  475  ./findConditionnalStatementInsideBashFileSystem.sh
+  476  gedit README.md 
+  477  cd ..
+  478  cp ./exo4/first_lexical_analyser.c ./exo6/regex.c
+  479  cd exo6/
+  480  gedit regex.c 
+  481  gcc -o regex regex.c 
+  482  gedit regex.c 
+  483  gcc -o regex regex.c 
+  484  gedit regex.c 
+  485  gcc -o regex regex.c 
+  486  ./regex /etc/bash.bashrc 
+  487  cp regex.c regex2.c
+  488  echo "grep -c -E '[abc]*' /etc/bash.bashrc" > findConditionnalStatementInsideBashFileSystem.sh 
+  489  echo "grep -c -E '^if.*n$' /etc/bash.bashrc" > findConditionnalStatementInsideBashFileSystem.sh 
+  490  grep -c -E '[abc]*' /etc/bash.bashrc
+  491  grep -c -E '[a]*' /etc/bash.bashrc
+  492  grep -c -E '[b]*' /etc/bash.bashrc
+  493  grep -c -E '[c]*' /etc/bash.bashrc
+  494  gedit regex2.c
+  495  gcc -o regex2 regex2.c 
+  496  ./regex2 /etc/bash.bashrc 
+  497  gedit regex2.c
+  498  gcc -o regex2 regex2.c 
+  499  ./regex2 /etc/bash.bashrc 
+  500  gedit regex2.c
+  501  gcc -o regex2 regex2.c 
+  502  ./regex2 /etc/bash.bashrc 
+  503  gedit /etc/bash.bashrc
+  504  gedit regex2.c
+  505  gcc -o regex2 regex2.c 
+  506  gedit /etc/bash.bashrc
+  507  ./regex2 /etc/bash.bashrc 
+  508  gedit regex2.c
+  509  grep -E '[abc]*' /etc/bash.bashrc >reg.txt
+  510  gedit reg.txt 
+  511  man 7 grep
+  512  man grep
+  513  grep -o -E '[abc]*' /etc/bash.bashrc >reg.txt
+  514  gedit reg.txt 
+  515  grep -x -E '[abc]*' /etc/bash.bashrc >reg.txt
+  516  gedit reg.txt 
+  517  grep -o -E '[abc]*' /etc/bash.bashrc >reg.txt
+  518  gedit reg.txt 
+  519  gcc -o regex2 regex2.c 
+  520  ./regex2 /etc/bash.bashrc 
+  521  gedit regex2.c
+  522  gcc -o regex2 regex2.c 
+  523  ./regex2 /etc/bash.bashrc 
+  524  gedit regex2.c
+  525  gcc -o regex2 regex2.c 
+  526  ./regex2 /etc/bash.bashrc 
+  527  git push
+  528  history > hist.txt && gedit hist.txt

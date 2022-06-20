@@ -1,27 +1,3 @@
-Les lé
-occurence 1 = muriens
+<int:115><operateur:+><int:225><operateur:*><int:4><operateur:/><bad_operateur:/><int:1>
 
- on sauté le 
-occurence 2 = mur
-
-, qui n'était pas plus haut que un 
-occurence 3 = muret
-
-.
-Les Muretains on crié au scandale ! C'était loin de ressembler Ã  un 
-occurence 4 = murmure
-
- et a disant : "Mais ce n'est plus un 
-occurence 5 = mmmmmmur
-
- !"Le 
-occurence 6 = mur
-
- mutr mutr 
-occurence 7 = murmutr
-
- 
-occurence 8 = mmmmmmur
-
-
-le fichier lire.txt contient 8 occurence(s) du mot mur
+Invalid arithmetical operation in expression.txt
