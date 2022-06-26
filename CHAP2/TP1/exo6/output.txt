@@ -1,3 +1,4 @@
+/etc/bash.bashrc
 ba
 c
 ac
@@ -150,3 +151,4 @@ c
 a
 c
 a
+152

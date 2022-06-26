@@ -8,7 +8,7 @@ int finalError = 0;
 
 %%
 [0-9]+ {error = 0;state = 0;fprintf(yyout,"<int:%s>",yytext);}
-[+-/*] {error = (state == 1?1:0);finalError = (error ==1?1:finalError);state = (state == 0?1:++state);error == 0?fprintf(yyout,"<operateur:%s>",yytext):fprintf(yyout,"<bad_operateur:%s>",yytext);}
+[+-/*=] {error = (state == 1?1:0);finalError = (error ==1?1:finalError);state = (state == 0?1:++state);error == 0?fprintf(yyout,"<operateur:%s>",yytext):fprintf(yyout,"<bad_operateur:%s>",yytext);}
 [_a-zA-Z]* {error = 1;fprintf(yyout,"<error:%s>",yytext);}
 
 %%

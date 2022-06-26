@@ -1,0 +1,10 @@
+monEntier = 6 ; monBooleen = faux ;
+
+afficher monEntier ;
+afficher monBooleen ;
+afficher 4 ;
+afficher non ( ( vrai et faux ) ou vrai ) ;
+afficher 6/3 ;
+
+@#!%^$
+

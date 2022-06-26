@@ -1,3 +1,3 @@
-<int:115><operateur:+><int:225><operateur:*><int:4><operateur:/><bad_operateur:/><int:1>
+<int:115><operateur:+><int:225><operateur:*><int:4><operateur:/><int:1><operateur:=><int:0>
 
-Invalid arithmetical operation in expression.txt
+Correct arithmetical operation in expression.txt
