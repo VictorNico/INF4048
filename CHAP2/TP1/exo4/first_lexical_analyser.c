@@ -75,7 +75,7 @@ int main(int argc,char *argv[])
 	// }
 	// q3:{
 	// 	{+,*,-,/}->error_q5,
-	// 	{0-9}->final_q5
+	// 	{0-9}->final_q4
 	// }
 	// final_q4:{
 	// 	{0-9}->final_q2,

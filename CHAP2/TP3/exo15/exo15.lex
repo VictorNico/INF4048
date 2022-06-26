@@ -6,8 +6,6 @@
 
 entier [0-9]+
 operateur \+|\*|\=|\;|\=\=|\!\=|\<|\>
-parenthese \(|\)
-variable a|b|c|d
 
 %%
 {entier} { yylval=atoi(yytext);return INTEGER;}

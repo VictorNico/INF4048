@@ -62,7 +62,7 @@ int main(int argc,char *argv[])
 	// 	{i}->q1
 	// }
 	// q1:{
-	// 	+\{f}->error_q5,
+	// 	*\{f}->error_q5,
 	// 	{f}->q2
 	// }
 	// q2:{
