@@ -1,48 +1,55 @@
 %{
 #include<stdio.h>
 #include "simple.h"
-unsigned int lineno=1;
-int error_lexical=1;
 
 %}
 %option noyywrap
 
-number [0-9]+
-operator \+|\*|\=|\;|\=\=|\!\=|\<|\>
-startUrge "nzhìè"
-keyUrge "mànkō"
-pronouns "ā"|"ō"|"ī"|"yāā"|"yēē"|"yōh"
-startSentiment "Fōh"|"Túfhǔ"
-acceptWords "wúzá"|"kǔ'"|"nshǐ"|"ndǔ'"|"péé"|"nàh nsíí"|"nàh nní"|"nàh njīī nó"|"nàh njēē ló"|"lǒ"|"nǒ"|"nkə̀mnkə̌b"
-u3 "u3"
 u2 "u2"
 a1 "a1"
+a2 "a2"
 a3 "a3"
 o3 "o3"
+o2 "o2"
+o7 "o7"
+eu1 "eu1"
+eu7 "eu7"
+e3 "e3"
+e2 "e2"
+i2 "i2"
+i3 "i3"
+i7 "i7"
+u7 "u7"
+autre [.]+
+
+%%
+{u2} { fprintf(yyout,"ú");}
+{a1} { fprintf(yyout,"à");}
+{a2} { fprintf(yyout,"á");}
+{a3} { fprintf(yyout,"ā");}
+{o3} { fprintf(yyout,"ō");}
+{o2} { fprintf(yyout,"ú");}
+{o7} { fprintf(yyout,"ǒ");}
+{eu1} { fprintf(yyout,"ə̀");}
+{eu7} { fprintf(yyout,"ə̌");}
+{e3} { fprintf(yyout,"ē");}
+{e2} { fprintf(yyout,"é");}
+{i2} { fprintf(yyout,"í");}
+{i3} { fprintf(yyout,"ī");}
+{i7} { fprintf(yyout,"ǐ");}
+{u7} { fprintf(yyout,"ǔ");}
+{autre} {fprintf(yyout,"%s",yytext);}
 
 
 %%
-{acceptWords} { yylval.texte=yytext;return WORD;}
-{startUrge} { yylval.texte=yytext;return START_URGE;}
-{keyUrge} { yylval.texte=yytext;return KEY_URGE;}
-{pronouns} { yylval.texte=yytext;return PRONOUN;}
-{startSentiment} { yylval.texte=yytext;return START_SENTIMENT;}
-"\n" {lineno++;}
-" "|"\t"|"." ;
-{operator} {
-    fprintf(stderr,"\tERREUR : Lexeme inconnu a la ligne %d. Il s'agit de %s et comporte %d lettre(s)\n",lineno,yytext,yyleng);
-    error_lexical=0;
-    return yytext[0];
-}
-{number} {
-    fprintf(stderr,"\tERREUR : Lexeme inconnu a la ligne %d. Il s'agit de %s et comporte %d lettre(s)\n",lineno,yytext,yyleng);
-    error_lexical=0;
-    return yytext[0];
-}
 
-%%
+int main(int argc, char* argv[])
+{
+	extern FILE *yyin,*yyout;
+	yyin = fopen(argv[1],"r");
+	yyout = fopen("translate.nufi","w");
+	yylex();
+	return 0;
 
-/*flex -o tp7.yy.c tp7.lex
-gcc -pedantic -Wall -O2 tp7.yy.c -o tp7 -lfl
-utilisation : echo "12+6*8" | ./tp7 */
+}
 
