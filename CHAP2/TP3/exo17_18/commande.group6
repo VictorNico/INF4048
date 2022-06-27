@@ -1,4 +1,0 @@
-a=3;
-b=42+3*a;
-print a; print b;
-
