@@ -3,6 +3,8 @@
 #include<stdio.h>
 #include "simple.h"
 #define nbMax
+int yyerror(char *str);
+int yylex(void);
 %}
 %token INTEGER
 

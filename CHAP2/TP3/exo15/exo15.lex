@@ -5,7 +5,7 @@
 %}
 
 entier [0-9]+
-operateur \+|\*|\=|\;|\=\=|\!\=|\<|\>
+operateur \+|\*
 
 %%
 {entier} { yylval=atoi(yytext);return INTEGER;}
@@ -17,8 +17,3 @@ operateur \+|\*|\=|\;|\=\=|\!\=|\<|\>
 . { printf("parse error (lex) + %s -\n",yytext); }
 
 %%
-
-/*flex -o tp7.yy.c tp7.lex
-gcc -pedantic -Wall -O2 exo15.yy.c -o exo15 -lfl
-utilisation : echo "12+6*8" | ./exo15 */
-
