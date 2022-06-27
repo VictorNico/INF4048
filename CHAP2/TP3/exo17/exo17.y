@@ -49,19 +49,19 @@ void mult()
 %token VARIABLE
 
 %%
-Program:
-       stat {printf("\n\n\t\t OK pourla syntaxe \n\n");}
+A:
+       B {printf("\n\n\t\t OK pourla syntaxe \n\n");}
        
 
-stat: 
-      bloc
+B: 
+      C
 
-bloc:
-      instr ';'
-     |instr ';' bloc
+C:
+      D ';'
+     |D ';' C
 
 
-instr:
+D:
 
       VARIABLE '=' E {affec($1); printf("\nRéduction instr ---> var = E ");}
      | PRINT VARIABLE {printf("\nRéduction instr ---> print: %d", take($2));}
