@@ -11,7 +11,7 @@
 
 # STRUCTURE DU TRAVAIL
 
-.INF4048
+    .INF4048
     ├── CHAP1                                 # dossier de codes des exercices du chapitre 1
     │    └── TP1                    		# travaux pratiques 1
     │        ├── exo1                     	# exercice 1
