@@ -12,8 +12,10 @@ int get_priorite(char operateur)
 {
     if (operateur == '+' || operateur == '-')
         return 0;
-    if (operateur == '*' || operateur == '/')
+    if (operateur == '*')
         return 1;
+    if (operateur == '/')
+    	return 2
     else
         return -1;
 }
