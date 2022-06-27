@@ -73,6 +73,8 @@
 #include "simple.h"
 #include "utilitaire.h"
 #define nbMax
+int yyerror(char *str);
+int yylex(void);
 int compteurSi = 0, compteurTest = 0, compteurWhile = 0;
 FILE *yyout;
 int var[4];
@@ -106,7 +108,7 @@ void mult()
 }
 
 
-#line 110 "exo18.c"
+#line 112 "exo18.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -535,8 +537,8 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    47,    47,    51,    54,    55,    60,    61,    65,    66,
-      70,    71,    74,    75
+       0,    49,    49,    53,    56,    57,    62,    63,    67,    68,
+      72,    73,    76,    77
 };
 #endif
 
@@ -546,8 +548,7 @@ static const yytype_int8 yyrline[] =
 static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "INTEGER", "PRINT", "VARIABLE", "';'",
-  "'='", "'+'", "'*'", "$accept", "Program", "stat", "bloc", "instr", "E",
-  "T", "F", YY_NULLPTR
+  "'='", "'+'", "'*'", "$accept", "A", "B", "C", "D", "E", "T", "F", YY_NULLPTR
 };
 #endif
 
@@ -1332,49 +1333,49 @@ yyreduce:
   switch (yyn)
     {
   case 2:
-#line 47 "exo18.y"
-            {printf("\n\n\t\t Programme exécuté avec succès \n\n");}
-#line 1338 "exo18.c"
+#line 49 "exo18.y"
+         {printf("\n\n\t\t Programme exécuté avec succès \n\n");}
+#line 1339 "exo18.c"
     break;
 
   case 6:
-#line 60 "exo18.y"
+#line 62 "exo18.y"
                      {affec(yyvsp[-2]);}
-#line 1344 "exo18.c"
+#line 1345 "exo18.c"
     break;
 
   case 7:
-#line 61 "exo18.y"
+#line 63 "exo18.y"
                       {printf("\n%d", take(yyvsp[0]));}
-#line 1350 "exo18.c"
+#line 1351 "exo18.c"
     break;
 
   case 9:
-#line 66 "exo18.y"
+#line 68 "exo18.y"
              {add();}
-#line 1356 "exo18.c"
+#line 1357 "exo18.c"
     break;
 
   case 11:
-#line 71 "exo18.y"
+#line 73 "exo18.y"
              {mult(); }
-#line 1362 "exo18.c"
+#line 1363 "exo18.c"
     break;
 
   case 12:
-#line 74 "exo18.y"
+#line 76 "exo18.y"
             {empiler(&p, yyvsp[0]);}
-#line 1368 "exo18.c"
+#line 1369 "exo18.c"
     break;
 
   case 13:
-#line 75 "exo18.y"
+#line 77 "exo18.y"
                 {empiler(&p, take(yyvsp[0]));}
-#line 1374 "exo18.c"
+#line 1375 "exo18.c"
     break;
 
 
-#line 1378 "exo18.c"
+#line 1379 "exo18.c"
 
       default: break;
     }
@@ -1606,7 +1607,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 77 "exo18.y"
+#line 79 "exo18.y"
 
 
 int main(void)

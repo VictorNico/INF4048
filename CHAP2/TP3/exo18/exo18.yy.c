@@ -1788,8 +1788,4 @@ void yyfree (void * ptr )
 #line 22 "exo18.lex"
 
 
-/*flex -o tp7.yy.c tp7.lex
-gcc -pedantic -Wall -O2 tp7.yy.c -o tp7 -lfl
-utilisation : echo "12+6*8" | ./tp7 */
-
 

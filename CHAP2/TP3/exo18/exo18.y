@@ -4,6 +4,8 @@
 #include "simple.h"
 #include "utilitaire.h"
 #define nbMax
+int yyerror(char *str);
+int yylex(void);
 int compteurSi = 0, compteurTest = 0, compteurWhile = 0;
 FILE *yyout;
 int var[4];
@@ -43,19 +45,19 @@ void mult()
 %token VARIABLE
 
 %%
-Program:
-       stat {printf("\n\n\t\t Programme exécuté avec succès \n\n");}
+A:
+       B {printf("\n\n\t\t Programme exécuté avec succès \n\n");}
        
 
-stat: 
-      bloc
+B: 
+      C
 
-bloc:
-      instr ';'
-     |instr ';' bloc
+C:
+      D ';'
+     |D ';' C
 
 
-instr:
+D:
 
       VARIABLE '=' E {affec($1);}
      | PRINT VARIABLE {printf("\n%d", take($2));}

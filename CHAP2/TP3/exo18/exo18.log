@@ -1,16 +1,16 @@
 Grammar
 
-    0 $accept: A $end
+    0 $accept: Program $end
 
-    1 A: B
+    1 Program: stat
 
-    2 B: C
+    2 stat: bloc
 
-    3 C: D ';'
-    4  | D ';' C
+    3 bloc: instr ';'
+    4     | instr ';' bloc
 
-    5 D: VARIABLE '=' E
-    6  | PRINT VARIABLE
+    5 instr: VARIABLE '=' E
+    6      | PRINT VARIABLE
 
     7 E: T
     8  | E '+' T
@@ -39,16 +39,16 @@ Nonterminals, with rules where they appear
 
     $accept (10)
         on left: 0
-    A (11)
+    Program (11)
         on left: 1
         on right: 0
-    B (12)
+    stat (12)
         on left: 2
         on right: 1
-    C (13)
+    bloc (13)
         on left: 3 4
         on right: 2 4
-    D (14)
+    instr (14)
         on left: 5 6
         on right: 3 4
     E (15)
@@ -64,70 +64,70 @@ Nonterminals, with rules where they appear
 
 State 0
 
-    0 $accept: . A $end
+    0 $accept: . Program $end
 
     PRINT     shift, and go to state 1
     VARIABLE  shift, and go to state 2
 
-    A  go to state 3
-    B  go to state 4
-    C  go to state 5
-    D  go to state 6
+    Program  go to state 3
+    stat     go to state 4
+    bloc     go to state 5
+    instr    go to state 6
 
 
 State 1
 
-    6 D: PRINT . VARIABLE
+    6 instr: PRINT . VARIABLE
 
     VARIABLE  shift, and go to state 7
 
 
 State 2
 
-    5 D: VARIABLE . '=' E
+    5 instr: VARIABLE . '=' E
 
     '='  shift, and go to state 8
 
 
 State 3
 
-    0 $accept: A . $end
+    0 $accept: Program . $end
 
     $end  shift, and go to state 9
 
 
 State 4
 
-    1 A: B .
+    1 Program: stat .
 
-    $default  reduce using rule 1 (A)
+    $default  reduce using rule 1 (Program)
 
 
 State 5
 
-    2 B: C .
+    2 stat: bloc .
 
-    $default  reduce using rule 2 (B)
+    $default  reduce using rule 2 (stat)
 
 
 State 6
 
-    3 C: D . ';'
-    4  | D . ';' C
+    3 bloc: instr . ';'
+    4     | instr . ';' bloc
 
     ';'  shift, and go to state 10
 
 
 State 7
 
-    6 D: PRINT VARIABLE .
+    6 instr: PRINT VARIABLE .
 
-    $default  reduce using rule 6 (D)
+    $default  reduce using rule 6 (instr)
 
 
 State 8
 
-    5 D: VARIABLE '=' . E
+    5 instr: VARIABLE '=' . E
 
     INTEGER   shift, and go to state 11
     VARIABLE  shift, and go to state 12
@@ -139,23 +139,23 @@ State 8
 
 State 9
 
-    0 $accept: A $end .
+    0 $accept: Program $end .
 
     $default  accept
 
 
 State 10
 
-    3 C: D ';' .
-    4  | D ';' . C
+    3 bloc: instr ';' .
+    4     | instr ';' . bloc
 
     PRINT     shift, and go to state 1
     VARIABLE  shift, and go to state 2
 
-    $default  reduce using rule 3 (C)
+    $default  reduce using rule 3 (bloc)
 
-    C  go to state 16
-    D  go to state 6
+    bloc   go to state 16
+    instr  go to state 6
 
 
 State 11
@@ -174,12 +174,12 @@ State 12
 
 State 13
 
-    5 D: VARIABLE '=' E .
+    5 instr: VARIABLE '=' E .
     8 E: E . '+' T
 
     '+'  shift, and go to state 17
 
-    $default  reduce using rule 5 (D)
+    $default  reduce using rule 5 (instr)
 
 
 State 14
@@ -201,9 +201,9 @@ State 15
 
 State 16
 
-    4 C: D ';' C .
+    4 bloc: instr ';' bloc .
 
-    $default  reduce using rule 4 (C)
+    $default  reduce using rule 4 (bloc)
 
 
 State 17
